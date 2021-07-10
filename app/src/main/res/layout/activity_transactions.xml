@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background"
+    android:orientation="vertical"
+    tools:context=".Transactions">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/box_background"
+        android:orientation="vertical"
+        android:paddingLeft="20sp"
+        android:paddingTop="10sp"
+        android:layout_marginBottom="5sp">
+
+        <TextView
+            android:id="@+id/transaction_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="Monday, June 2020"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:fontFamily="@font/chelsea_market"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="100"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/transaction_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="55"
+                android:gravity="left"
+                android:text="#Earning"
+                android:paddingLeft="10sp"
+                android:textSize="13sp"
+                android:textColor="@color/orange"
+                android:fontFamily="@font/chelsea_market"/>
+
+            <TextView
+                android:id="@+id/transaction_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="20"
+                android:gravity="left"
+                android:text="12349"
+                android:textSize="13sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/chelsea_market"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/transaction_source"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="Source"
+            android:paddingLeft="10sp"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/chelsea_market"/>
+
+    </LinearLayout>
+</LinearLayout>

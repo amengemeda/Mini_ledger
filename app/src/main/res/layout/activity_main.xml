@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="410dp"
+        android:layout_height="66dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:paddingTop="10sp"
+        android:text="WELCOME"
+        android:fontFamily="@font/chelsea_market"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:textColor="@color/orange"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:id="@+id/balance_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/welcome"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20sp"
+        android:background="@color/box_background"
+        android:paddingVertical="10sp"
+        android:paddingHorizontal="15sp"
+        >
+
+        <TextView
+            android:id="@+id/balance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/chelsea_market"
+            android:gravity="center_horizontal"
+            android:text="300"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="28dp"
+            android:layout_marginBottom="10sp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/chelsea_market"
+            android:text="Balance"
+            android:drawableLeft="@drawable/ic_balance_wallet"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:paddingLeft="15sp"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/detail_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/balance_box"
+        android:layout_marginTop="25sp"
+        android:paddingHorizontal="15sp">
+        <LinearLayout
+            android:id="@+id/income_box"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/welcome"
+            android:layout_centerHorizontal="true"
+            android:background="@color/box_background"
+            android:paddingVertical="5sp"
+            android:layout_marginRight="10sp"
+            >
+
+            <TextView
+                android:id="@+id/total_income"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/chelsea_market"
+                android:gravity="center_horizontal"
+                android:text="300"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:layout_marginBottom="10sp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/chelsea_market"
+                android:text="Total Income"
+                android:drawableLeft="@drawable/ic_baseline_attach_money_24"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="5sp"
+                android:paddingLeft="15sp"
+                android:elegantTextHeight="true"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/expenditure_box"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10sp"
+            android:background="@color/box_background"
+            android:orientation="vertical"
+            android:paddingVertical="5sp">
+
+            <TextView
+                android:id="@+id/total_expenditure"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10sp"
+                android:fontFamily="@font/chelsea_market"
+                android:gravity="center_horizontal"
+                android:text="300"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5sp"
+                android:fontFamily="@font/chelsea_market"
+                android:gravity="center_horizontal"
+                android:text="Total Expenditure"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:drawableLeft="@drawable/ic_baseline_payment_24"
+                android:paddingLeft="5sp"
+                android:elegantTextHeight="true"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/transactionButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/detail_box"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="64dp"
+        android:backgroundTint="@color/orange"
+        android:fontFamily="@font/chelsea_market"
+        android:onClick="goToTransactionPage"
+        android:paddingVertical="14dp"
+        android:text="Transactions"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+    
+    <Button
+        android:id="@+id/add_transaction_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/transactionButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20sp"
+        android:backgroundTint="@color/orange"
+        android:fontFamily="@font/chelsea_market"
+        android:paddingVertical="14dp"
+        android:text="Add Transaction"
+        android:onClick="goToAddTransactionPage"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+
+</RelativeLayout>
