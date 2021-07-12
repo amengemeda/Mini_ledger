@@ -53,12 +53,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         long result = db.insert(TABLE_NAME, null, contentValues);
 
-        //if date as inserted incorrectly it will return -1
-        if (result == -1) {
-            return false;
-        } else {
-            return true;
-        }
+        //if date is inserted incorrectly it will return -1
+        return result != -1;
+    }
+    public boolean updateData(int id, double transactionAmount, String transactionType, String transactionDate, String transactionReason  ) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL2, transactionAmount);
+        contentValues.put(COL3, transactionType);
+        contentValues.put(COL4, transactionDate);
+        contentValues.put(COL5, transactionReason);
+
+        long result= db.update(TABLE_NAME,contentValues,"transaction_id=?", new String[]{String.valueOf(id)});
+//        long result = db.insert(TABLE_NAME, null, contentValues);
+
+        //if date is updated incorrectly it will return -1
+        return result != -1;
+    }
+    public boolean deleteData(int transaction_id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result= db.delete(TABLE_NAME,"transaction_id=?", new String[]{String.valueOf(transaction_id)});
+
+        //if date is not deleted it will return -1
+        return result != -1;
     }
     public Cursor getListContents(){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -96,8 +114,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             if(incomeCursor.moveToNext()){
                 totalIncome= incomeCursor.getString(0);
             }
-        }else{
-            totalIncome= "0 ksh";
+        }
+        if(totalIncome==null){
+            totalIncome= "0";
         }
         return totalIncome;
     }
@@ -110,9 +129,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             if(incomeCursor.moveToNext()){
                 totalExpenditure= incomeCursor.getString(0);
             }
-        }else{
-            totalExpenditure= "0 ksh";
+        }
+        if(totalExpenditure==null){
+            totalExpenditure= "0";
         }
         return totalExpenditure;
+    }
+    public TransactionHandler getSpecificTransaction(int transactionId){
+        SQLiteDatabase db= this.getWritableDatabase();
+        String[] transactionArg = {String.valueOf(transactionId)};
+        TransactionHandler transaction= new TransactionHandler();
+        Cursor rowCursor= db.rawQuery("SELECT * FROM "+TABLE_NAME+" WHERE transaction_id = ?",transactionArg);
+        if(rowCursor!=null){
+            if (rowCursor.moveToNext()){
+                transaction= new TransactionHandler(rowCursor.getInt(0),
+                        rowCursor.getDouble(1),
+                        rowCursor.getString(2),
+                        rowCursor.getString(3),
+                        rowCursor.getString(4));
+            }
+        }else{
+            transaction= new TransactionHandler();
+        }
+        return transaction;
     }
 }

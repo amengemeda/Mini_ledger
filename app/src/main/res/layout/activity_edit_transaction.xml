@@ -4,16 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddTransaction"
+    tools:context=".EditTransaction"
     android:background="@color/background">
-
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/edit_transaction_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:gravity="center_horizontal"
-        android:text="@string/add_transaction"
+        android:text="@string/edit_transaction"
         android:textAlignment="center"
         android:textSize="30sp"
         android:textColor="@color/orange"
@@ -33,29 +32,29 @@
         android:padding="20sp"
         android:fontFamily="@font/chelsea_market"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
+        app:layout_constraintTop_toBottomOf="@+id/edit_transaction_title">
 
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginLeft="25sp"
-            >
+            android:layout_marginStart="25sp">
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/incomeRadioButton"
+                android:id="@+id/editIncomeRadioButton"
                 android:layout_weight="50"
                 android:text="@string/income"
                 android:fontFamily="@font/chelsea_market"
                 android:textColor="@color/white"
                 android:textAlignment="center"
                 android:layout_gravity="center_horizontal"
-                android:checked="true"/>
+                />
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/expenditureRadioButton"
+                android:id="@+id/editExpenditureRadioButton"
                 android:layout_weight="50"
                 android:fontFamily="@font/chelsea_market"
                 android:text="@string/expenditure"
@@ -67,7 +66,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-           >
+            >
 
             <TextView
                 android:layout_width="match_parent"
@@ -81,7 +80,7 @@
                 android:fontFamily="@font/chelsea_market"/>
 
             <EditText
-                android:id="@+id/transactionAmount"
+                android:id="@+id/editTransactionAmount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="30"
@@ -105,7 +104,7 @@
                 android:fontFamily="@font/chelsea_market"/>
 
             <Button
-                android:id="@+id/transactionDate"
+                android:id="@+id/editTransactionDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="30"
@@ -133,7 +132,7 @@
                 android:fontFamily="@font/chelsea_market"/>
 
             <EditText
-                android:id="@+id/transactionSource"
+                android:id="@+id/editTransactionSource"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="30"
@@ -143,15 +142,23 @@
 
 
         <Button
+            android:id="@+id/editButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40sp"
-            android:text="@string/add_transaction"
-            android:onClick="addTransaction"
+            android:text="@string/edit_transaction_button"
+            android:onClick="editTransaction"
+            android:backgroundTint="@color/box_background"
+            android:textColor="@color/white"/>
+        <Button
+            android:id="@+id/deleteButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15sp"
+            android:text="@string/delete_transaction"
+            android:onClick="deleteTransaction"
             android:backgroundTint="@color/box_background"
             android:textColor="@color/white"/>
     </LinearLayout>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

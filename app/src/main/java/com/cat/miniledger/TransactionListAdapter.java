@@ -31,20 +31,21 @@ public class TransactionListAdapter extends ArrayAdapter<TransactionHandler> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
-        //get the persons information
+        //get the transaction's information
+        int id= getItem(position).getTransactionId();
         String date = getItem(position).getTransactionDate();
         Double amount = getItem(position).getTransactionAmount();
         String type = getItem(position).getTransactionType();
         String source = getItem(position).getTransactionSource();
-        Log.d("Date",date);
-        Log.d("amount",amount.toString());
-        Log.d("type",type);
-        Log.d("source",source);
+//        Log.d("Date",date);
+//        Log.d("amount",amount.toString());
+//        Log.d("type",type);
+//        Log.d("source",source);
         LayoutInflater layoutInflater= LayoutInflater.from(mContext);
         convertView = layoutInflater.inflate(mResource,parent,false);
 
         //Create the person object with the information
-        TransactionHandler transactionHandler = new TransactionHandler(amount,date,source,type);
+        TransactionHandler transactionHandler = new TransactionHandler(id,amount,date,source,type);
         TextView transactionDate = convertView.findViewById(R.id.transaction_date);
         TextView transactionType = convertView.findViewById(R.id.transaction_type);
         TextView transactionAmount = convertView.findViewById(R.id.transaction_amount);

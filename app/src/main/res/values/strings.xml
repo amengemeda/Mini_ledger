@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Mini Ledger</string>
+    <string name="edit_transaction_button">Edit Transaction</string>
+    <string name="edit_transaction">Edit Transaction</string>
+    <string name="income">Income</string>
+    <string name="expenditure">Expenditure</string>
+    <string name="date">Date</string>
+    <string name="amount">Amount</string>
+    <string name="select_date">select Date</string>
+    <string name="comment">Comment</string>
+    <string name="delete_transaction">Delete Transaction</string>
+    <string name="add_transaction">Add Transaction</string>
+
 </resources>

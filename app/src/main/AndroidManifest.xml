@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MiniLedger">
-        <activity android:name=".AddTransaction"></activity>
-        <activity android:name=".Transactions"></activity>
+        <activity android:name=".EditTransaction"></activity>
+        <activity android:name=".AddTransaction" />
+        <activity android:name=".Transactions" />
         <activity android:name=".Transaction" />
         <activity android:name=".MainActivity">
             <intent-filter>
